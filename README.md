@@ -55,6 +55,6 @@ Based on the forensic analysis, I recommend the following security controls:
 ---
 
 ## Repository Structure
-* `/captures`: Contains the raw PCAP file for further investigation.
-* `/screenshots`: Annotated visual evidence of the attack and forensic analysis.
-* `README.md`: Professional project documentation and technical report.
+* [captures](captures): Contains the raw PCAP file for further investigation.
+* [screenshots](screenshots): Annotated visual evidence of the attack and forensic analysis.
+* [README.md](README.md): Professional project documentation and technical report.
