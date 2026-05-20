@@ -27,30 +27,34 @@ This project demonstrates the practical application of network traffic analysis 
 
 ## Investigation Workflow
 
+---
+
+## Investigation Workflow
+
 ### 1. Attack Execution (The Source)
 I simulated a dictionary-based brute force attack using **Hydra** against an HTTP login form to generate malicious traffic patterns.
-* **Evidence:** ![Hydra Execution](screenshots/hydra-attack.png)
+* **Evidence:** ![Hydra Execution](screenshots/hydra_execution_results.png)
 
 ### 2. Reconnaissance & DNS Analysis
 Monitoring the network for scanning activity and DNS resolution to identify the early stages of the attack.
-* **Analysis:** Observed **ICMP Type 3** packets, indicating active host discovery and port scanning.
-* **Evidence:** ![Recon Analysis](screenshots/dns-analysis.png)
+* **Evidence:** ![Recon Analysis](screenshots/recon_dns_analysis.png)
 
 ### 3. Brute Force Detection & Fingerprinting
 Isolated authentication attempts and identified the tool's digital signature via Deep Packet Inspection (DPI).
-* **Forensic Evidence:** Identified the `User-Agent` string specifically linked to the **Hydra** tool.
-* **Evidence:** ![Hydra Signature](screenshots/hydra-signature.png)
+* **Forensic Evidence:** Identified the User-Agent string specifically linked to the **Hydra** tool.
+* **Evidence:** ![Hydra Signature](screenshots/hydra_bruteforce_signature.png)
 
 ### 4. Vulnerability Assessment (Plaintext Exposure)
 Investigated the lack of encryption that allowed sensitive data to be exposed during transit.
-* **Finding:** Sensitive paths and data were visible in **Plaintext** due to the use of insecure HTTP.
-* **Evidence:** ![Plaintext Leak](screenshots/plaintext-leak.png)
+* **Finding:** Sensitive paths and credentials were visible in **Plaintext** due to the use of insecure HTTP.
+* **Evidence:** ![Plaintext Leak](screenshots/plaintext_data_leak.png)
 
 ### 5. Incident Confirmation
 Reconstructed the session stream to provide definitive proof of a successful account breach.
-* **Result:** The server responded with a clear **"success"** message, confirming the impact.
+* **Result:** The server responded with a clear **"success"** message, confirming the impact of the attack.
 * **Evidence:** ![TCP Stream Success](screenshots/tcp_stream_success.png)
 
+---
 ---
 
 ## Key Findings
