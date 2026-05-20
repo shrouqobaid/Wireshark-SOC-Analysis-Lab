@@ -111,7 +111,7 @@ The following diagram illustrates the flow of the attack and the strategic point
 
 ## 📂 Repository Structure
 
-* 📂 **captures**: Contains the raw PCAP file for further investigation.
-* 📸 **screenshots**: Annotated visual evidence of the forensic analysis.
-* 📝 **README.md**: Professional project documentation and technical report.
+- **captures**: Contains the raw PCAP file for further investigation.
+- **screenshots**: Annotated visual evidence of the forensic analysis.
+- **README.md**: Professional project documentation and technical report.
 
