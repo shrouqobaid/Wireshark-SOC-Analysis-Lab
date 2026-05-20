@@ -106,7 +106,8 @@ The following diagram illustrates the flow of the attack and the strategic point
          |    (Traffic Capture/DPI)       |
 
 
-## Repository Structure
+## 📂 Repository Structure
+
 * [📂 captures](captures): Contains the raw PCAP file for further investigation.
 * [📸 screenshots](screenshots): Annotated visual evidence of the forensic analysis.
 * [📝 README.md](README.md): Professional project documentation and technical report.
