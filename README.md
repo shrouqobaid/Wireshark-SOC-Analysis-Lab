@@ -27,19 +27,15 @@ This project demonstrates the practical application of network traffic analysis 
 
 ## Investigation Workflow
 
----
-
-## Investigation Workflow
-
 ### 1. Attack Execution (The Source)
 I simulated a dictionary-based brute force attack using **Hydra** against an HTTP login form to generate malicious traffic patterns.
 * **Evidence:** ![Hydra Execution](screenshots/hydra_execution_results.png)
 
-### 2. Reconnaissance & DNS Analysis
-Monitoring the network for scanning activity and DNS resolution to identify the early stages of the attack.
+### 2. Reconnaissance Activity
+Observed **ICMP Type 3** packets, indicating scanning activity before the attack phase.
 * **Evidence:** ![Recon Analysis](screenshots/recon_dns_analysis.png)
 
-### 3. Brute Force Detection & Fingerprinting
+### 3. Brute Force Detection
 Isolated authentication attempts and identified the tool's digital signature via Deep Packet Inspection (DPI).
 * **Forensic Evidence:** Identified the User-Agent string specifically linked to the **Hydra** tool.
 * **Evidence:** ![Hydra Signature](screenshots/hydra_bruteforce_signature.png)
@@ -50,12 +46,13 @@ Investigated the lack of encryption that allowed sensitive data to be exposed du
 * **Evidence:** ![Plaintext Leak](screenshots/plaintext_data_leak.png)
 
 ### 5. Incident Confirmation
-Reconstructed the session stream to provide definitive proof of a successful account breach.
-* **Result:** The server responded with a clear **"success"** message, confirming the impact of the attack.
+Reconstructed the TCP Stream and found the "success" message, confirming a breach.
 * **Evidence:** ![TCP Stream Success](screenshots/tcp_stream_success.png)
 
+
+
 ---
----
+
 
 ## Key Findings
 - **Detected brute force attack activity** via high-frequency POST requests.
@@ -79,12 +76,10 @@ ip.addr == [Target_IP]       # To focus on the victim machine
 ---
 
 
-## Incident Response & Mitigation
-To secure the environment against the identified threats, I recommend the following security controls:
-
-* **Enforce Encryption:** Transition all web services from HTTP to **HTTPS (TLS 1.3)** to prevent sensitive data (like credentials) from being sniffed in plaintext.
-* **Account Lockout Policy:** Implement strict lockout mechanisms after 5 failed attempts to thwart automated brute-force tools like **Hydra**.
-* **Multi-Factor Authentication (MFA):** Add a second layer of defense to ensure that compromised passwords alone are not enough for an account takeover.
+## Mitigation Recommendations
+* **Enforce Encryption:** Transition to **HTTPS (TLS 1.3)**.
+* **Account Lockout:** Implement strict lockout policies.
+* **IDS/IPS:** Monitor for high-frequency POST requests and suspicious User-Agents.
 
 
 ## SOC Analyst Perspective
@@ -115,8 +110,28 @@ The following diagram illustrates the flow of the attack and the strategic point
 
 ---
 
+# Lessons Learned
+
+This lab improved my understanding of:
+- Network traffic analysis
+- Brute force attack behavior
+- Packet inspection using Wireshark
+- HTTP authentication analysis
+- Attacker identification through traffic patterns
+- Importance of encrypted communications
+
+---
+
+# Conclusion
+
+This project demonstrates how packet analysis and network monitoring can help detect brute force attacks and identify security weaknesses in web environments.
+
+It also highlights the importance of proactive monitoring, encryption, and traffic-based threat detection in SOC operations. 
+
 ## 📂 Repository Structure
 
 * [**captures**](./captures): Contains the raw PCAP file for further investigation.
 * [**screenshots**](./screenshots): Annotated visual evidence of the forensic analysis.
 * [**README.md**](./README.md): Professional project documentation and technical report.
+
+
