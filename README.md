@@ -70,7 +70,8 @@ http.request.method == "POST" # To isolate login attempts
 dns                          # To monitor name resolution
 icmp                         # To detect scanning & unreachable hosts
 tcp                          # To analyze session streams
-ip.addr == [Target_IP]       # To focus on the victim machine```
+ip.addr == [Target_IP]       # To focus on the victim machine
+```
 ---
 
 
