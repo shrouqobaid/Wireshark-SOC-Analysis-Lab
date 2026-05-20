@@ -106,7 +106,8 @@ The following diagram illustrates the flow of the attack and the strategic point
          |<------- HTTP 200 (Success) ----|
          |               |                |
          |        [ Wireshark ]           |
-         |    (Traffic Capture/DPI)       |```
+         |    (Traffic Capture/DPI)       |
+```
 
 ---
 
