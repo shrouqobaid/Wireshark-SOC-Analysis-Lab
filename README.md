@@ -69,7 +69,9 @@ http.request.method == "POST" # To isolate login attempts
 dns                          # To monitor name resolution
 icmp                         # To detect scanning & unreachable hosts
 tcp                          # To analyze session streams
-ip.addr == [Target_IP]       # To focus on the victim machine
+ip.addr == [Target_IP]       # To focus on the victim machine```
+
+---
 
 
 ## Incident Response & Mitigation
@@ -103,11 +105,13 @@ The following diagram illustrates the flow of the attack and the strategic point
          |<------- HTTP 200 (Success) ----|
          |               |                |
          |        [ Wireshark ]           |
-         |    (Traffic Capture/DPI)       |
+         |    (Traffic Capture/DPI)       |```
 
+---
 
 ## 📂 Repository Structure
 
-* [📂 captures](captures): Contains the raw PCAP file for further investigation.
-* [📸 screenshots](screenshots): Annotated visual evidence of the forensic analysis.
-* [📝 README.md](README.md): Professional project documentation and technical report.
+* 📂 **captures**: Contains the raw PCAP file for further investigation.
+* 📸 **screenshots**: Annotated visual evidence of the forensic analysis.
+* 📝 **README.md**: Professional project documentation and technical report.
+
